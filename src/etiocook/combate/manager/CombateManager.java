@@ -11,8 +11,6 @@ public class CombateManager {
 
     private static CombateManager instance;
 
-
-
     private Map<String, Combate> manager = new HashMap<>();
 
     public Combate get(String name){

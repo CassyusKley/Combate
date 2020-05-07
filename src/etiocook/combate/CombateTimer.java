@@ -20,7 +20,8 @@ public class CombateTimer extends BukkitRunnable {
                     long t = Main.getInstance().getManager().get(player.getName()).getDelay() - System.currentTimeMillis();
                     Main.getInstance().sendBar(
                             player,
-                            " §c" +TimeUnit.MILLISECONDS.toSeconds(t) + "segundos");
+                            " §c" +TimeUnit.MILLISECONDS.toSeconds(t) + "segundos"
+                    );
 
                 } else {
 

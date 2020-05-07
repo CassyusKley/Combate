@@ -1,6 +1,7 @@
 package etiocook.combate.listener;
 
 import etiocook.combate.Main;
+import etiocook.combate.manager.CombateManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Cow;
@@ -24,28 +25,37 @@ public class Shooter implements Listener {
         if (e.getCause().equals(EntityDamageEvent.DamageCause.PROJECTILE)) {
             Arrow a = (Arrow) e.getDamager();
 
-            if (a.getShooter() instanceof Player) {
+            if (a.getShooter() instanceof Player && e.getEntity() instanceof Player) {
+
                 Player player = (Player) a.getShooter();
+                Player target = (Player) e.getEntity();
+                CombateManager manager = Main.getInstance().getManager();
 
-                if (e.getEntity() instanceof Player) {
-                    Player target = (Player) e.getEntity();
+                if (manager.contains(target.getName()) && manager.contains(player.getName())) {
 
-                    if (Main.getInstance().getManager().contains(target.getName())
-                            && Main.getInstance().getManager().contains(player.getName())) {
+                    manager.remove(target.getName());
+                    manager.remove(player.getName());
+                    manager.add(player.getName(), 60);
+                    manager.add(target.getName(), 60);
 
-                        Main.getInstance().getManager().remove(target.getName());
-                        Main.getInstance().getManager().remove(player.getName());
-                        Main.getInstance().getManager().add(player.getName(), 60);
-                        Main.getInstance().getManager().add(target.getName(), 60);
-
-                        return;
-
-                    }
-
-                    Main.getInstance().getManager().add(target.getName(), 60);
-                    Main.getInstance().getManager().add(player.getName(), 60);
+                    return;
 
                 }
+
+                manager.add(target.getName(), 60);
+                manager.add(player.getName(), 60);
+
+                player.sendMessage(
+                        "§4§lCombate: §7Você entrou em combate com §f§n"
+                                + target.getName()
+                                + "§r §7não deslogue");
+
+                target.sendMessage(
+                        "§4§lCombate: §7Você entrou em combate com §f§n"
+                                + player.getName()
+                                + "§r §7não deslogue");
+
+
             }
         }
     }

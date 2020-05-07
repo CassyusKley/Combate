@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class Interact implements Listener {
 
-    public Main pl;
+    private final Main main;
 
     public Interact(Main pl) {
-        this.pl = pl;
+        this.main = pl;
         pl.getServer().getPluginManager().registerEvents(this, pl);
     }
 
@@ -28,7 +28,7 @@ public class Interact implements Listener {
 
             if (hand.getType() == Material.ENDER_PEARL) {
 
-                if (Main.getInstance().getManager().contains(player.getName())) {
+                if (main.getManager().contains(player.getName())) {
 
                     player.sendMessage("§4§lCombate: §eVocê nao pode usar este item enquanto está em combate");
                     e.setCancelled(true);

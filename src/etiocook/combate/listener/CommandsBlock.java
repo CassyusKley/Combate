@@ -7,10 +7,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class CommandsBlock implements Listener {
-    public Main pl;
+    private final Main main;
 
     public CommandsBlock(Main pl) {
-        this.pl = pl;
+        this.main = pl;
         pl.getServer().getPluginManager().registerEvents(this, pl);
 
     }
@@ -19,7 +19,7 @@ public class CommandsBlock implements Listener {
     public void block(PlayerCommandPreprocessEvent e){
         Player player = e.getPlayer();
 
-        if(Main.getInstance().getManager().contains(player.getName())) {
+        if(main.getManager().contains(player.getName())) {
             e.setCancelled(true);
 
             player.sendMessage("§4§lCombate: §cvocê não pode usar comandos enquanto está em combate");

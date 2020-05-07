@@ -1,17 +1,17 @@
 package etiocook.combate.listener;
 
 import etiocook.combate.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class Death implements Listener {
-    public Main pl;
+
+    private final Main main;
 
     public Death(Main pl) {
-        this.pl = pl;
+        this.main = pl;
         pl.getServer().getPluginManager().registerEvents(this, pl);
     }
 
@@ -19,9 +19,9 @@ public class Death implements Listener {
     public void death (PlayerDeathEvent e){
         Player player = e.getEntity();
 
-        if(Main.getInstance().getManager().contains(player.getName())) {
+        if(main.getManager().contains(player.getName())) {
 
-            Main.getInstance().getManager().remove(player.getName());
+            main.getManager().remove(player.getName());
 
         }
     }

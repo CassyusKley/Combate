@@ -28,8 +28,6 @@ public class Hit implements Listener {
 
             if (manager.contains(target.getName()) && manager.contains(player.getName())) {
 
-                manager.remove(target.getName());
-                manager.remove(player.getName());
                 manager.add(player.getName(), 60);
                 manager.add(target.getName(), 60);
 

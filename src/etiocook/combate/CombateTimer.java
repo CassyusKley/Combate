@@ -8,24 +8,26 @@ import java.util.concurrent.TimeUnit;
 
 public class CombateTimer extends BukkitRunnable {
 
+    private Main main;
+
     @Override
     public void run() {
 
         for(Player player: Bukkit.getOnlinePlayers()) {
 
-            if (Main.getInstance().getManager().contains(player.getName())) {
+            if (main.getManager().contains(player.getName())) {
 
-                if (Main.getInstance().getManager().get(player.getName()).getDelay() >= System.currentTimeMillis()) {
+                if (main.getManager().get(player.getName()).getDelay() >= System.currentTimeMillis()) {
 
-                    long t = Main.getInstance().getManager().get(player.getName()).getDelay() - System.currentTimeMillis();
-                    Main.getInstance().sendBar(
+                    long t = main.getManager().get(player.getName()).getDelay() - System.currentTimeMillis();
+                    main.sendBar(
                             player,
                             " §c" +TimeUnit.MILLISECONDS.toSeconds(t) + "segundos"
                     );
 
                 } else {
 
-                    Main.getInstance().getManager().remove(player.getName());
+                    main.getManager().remove(player.getName());
                     player.sendMessage("§aVoce nao está mais em pvp");
 
                 }

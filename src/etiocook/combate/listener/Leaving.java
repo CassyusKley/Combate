@@ -1,7 +1,6 @@
 package etiocook.combate.listener;
 
 import etiocook.combate.Main;
-import etiocook.combate.manager.CombateManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,28 +9,28 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class Leaving implements Listener {
 
-    public Main pl;
+    private final Main main;
+
     public Leaving(Main pl) {
-        this.pl = pl;
+        this.main = pl;
         pl.getServer().getPluginManager().registerEvents(this, pl);
     }
 
-    @EventHandler
-    public void leave(PlayerQuitEvent e){
 
-        CombateManager manager = Main.getInstance().getManager();
+    @EventHandler
+    public void leave(PlayerQuitEvent e) {
+
         Player player = e.getPlayer();
 
-        if(manager.contains(player.getName())){
+        if (main.getManager().contains(player.getName())) {
 
             player.setHealth(0.0);
-            manager.remove(player.getName());
+            main.getManager().remove(player.getName());
 
-            for(Player players : Bukkit.getOnlinePlayers())
-            {
+            for (Player players : Bukkit.getOnlinePlayers()) {
                 players.sendMessage("§4§lCombate: §f" + player.getName() + " §cdeslogou em combate");
+
             }
         }
-
     }
 }

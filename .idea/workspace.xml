@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ECombate:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="58ce99ed-6c3b-429d-9b0c-8b3e52c5a0a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ECombate_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resource/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/etiocook/combate/CombateTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/CombateTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/etiocook/combate/listener/CommandsBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/listener/CommandsBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/etiocook/combate/listener/Death.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/listener/Death.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/etiocook/combate/listener/Interact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/listener/Interact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/etiocook/combate/listener/Leaving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/listener/Leaving.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etiocook/combate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etiocook/combate/listener/Hit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/listener/Hit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/etiocook/combate/listener/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etiocook/combate/listener/Shooter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +43,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MeusPlugins/API/spigot.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -82,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588888959876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Plugin de combate">
+      <created>1588892502519</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588892502519</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -99,22 +111,22 @@
       <screen x="0" y="0" width="1360" height="738" />
     </state>
     <state x="287" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.738@0.0.1360.738" timestamp="1588890856733" />
-    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1588888956331">
+    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1588892496663">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1360.738@0.0.1360.738" timestamp="1588888956331" />
+    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1360.738@0.0.1360.738" timestamp="1588892496663" />
     <state x="386" y="109" key="FileChooserDialogImpl" timestamp="1588882290595">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
     <state x="386" y="109" key="FileChooserDialogImpl/0.0.1360.738@0.0.1360.738" timestamp="1588882290595" />
-    <state x="160" y="0" key="SettingsEditor" timestamp="1588885693748">
+    <state x="160" y="0" key="SettingsEditor" timestamp="1588893477338">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="160" y="0" key="SettingsEditor/0.0.1360.738@0.0.1360.738" timestamp="1588885693748" />
-    <state x="272" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588888974314">
+    <state x="160" y="0" key="SettingsEditor/0.0.1360.738@0.0.1360.738" timestamp="1588893477338" />
+    <state x="272" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588892510145">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="272" y="101" key="Vcs.Push.Dialog.v2/0.0.1360.738@0.0.1360.738" timestamp="1588888974314" />
+    <state x="272" y="101" key="Vcs.Push.Dialog.v2/0.0.1360.738@0.0.1360.738" timestamp="1588892510145" />
     <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588888617345">
       <screen x="0" y="0" width="1360" height="738" />
     </state>

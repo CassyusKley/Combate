@@ -21,6 +21,7 @@ public class Shooter implements Listener {
 
     @EventHandler
     public void shooter(EntityDamageByEntityEvent e) {
+        if(e.isCancelled()) return;
 
         if (e.getCause().equals(EntityDamageEvent.DamageCause.PROJECTILE)) {
             Arrow a = (Arrow) e.getDamager();
@@ -30,18 +31,19 @@ public class Shooter implements Listener {
                 Player player = (Player) a.getShooter();
                 Player target = (Player) e.getEntity();
                 CombateManager manager = Main.getInstance().getManager();
-
+                if(player.getName() == target.getName()) return;
+                
                 if (manager.contains(target.getName()) && manager.contains(player.getName())) {
 
-                    manager.add(player.getName(), 60);
-                    manager.add(target.getName(), 60);
+                    manager.add(player.getName(), 15);
+                    manager.add(target.getName(), 15);
 
                     return;
 
                 }
 
-                manager.add(target.getName(), 60);
-                manager.add(player.getName(), 60);
+                manager.add(target.getName(), 15);
+                manager.add(player.getName(), 15);
 
                 player.sendMessage(
                         "§4§lCombate: §7Você entrou em combate com §f§n"

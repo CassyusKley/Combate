@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ECombate:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ECombate_jar</output-path>
+    <root id="archive" name="ECombate.jar">
+      <element id="module-output" name="ECombate" />
+    </root>
+  </artifact>
+</component>

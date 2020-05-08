@@ -19,6 +19,7 @@ public class Hit implements Listener {
 
     @EventHandler
     public void hit(EntityDamageByEntityEvent e) {
+        if(e.isCancelled()) return;
 
         if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 
@@ -28,15 +29,15 @@ public class Hit implements Listener {
 
             if (manager.contains(target.getName()) && manager.contains(player.getName())) {
 
-                manager.add(player.getName(), 60);
-                manager.add(target.getName(), 60);
+                manager.add(player.getName(), 15);
+                manager.add(target.getName(), 15);
 
                 return;
 
             }
 
-            manager.add(target.getName(), 60);
-            manager.add(player.getName(), 60);
+            manager.add(target.getName(), 15);
+            manager.add(player.getName(), 15);
 
             player.sendMessage(
                     "§4§lCombate: §7Você entrou em combate com §f§n"

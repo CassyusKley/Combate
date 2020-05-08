@@ -17,6 +17,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        new CombateTimer().runTaskTimerAsynchronously(this,0,20);
 
         new Hit(this);
         new Leaving(this);
@@ -25,7 +26,6 @@ public class Main extends JavaPlugin {
         new CommandsBlock(this);
         new Death(this);
 
-        new CombateTimer().runTaskTimerAsynchronously(this,0,20);
 
     }
 
@@ -39,9 +39,5 @@ public class Main extends JavaPlugin {
         return manager;
     }
 
-    public void sendBar(Player player, String message) {
-        IChatBaseComponent cbComponent = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + message + "\"}");
-        PacketPlayOutChat packetPlayOutChat = new PacketPlayOutChat(cbComponent, (byte) 2);
-        ((CraftPlayer) player).getHandle().playerConnection.sendPacket(packetPlayOutChat);
-    }
+
 }

@@ -2,10 +2,13 @@ package etiocook.combate.listener;
 
 import etiocook.combate.Main;
 import etiocook.combate.manager.CombateManager;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 public class Hit implements Listener {
 
@@ -17,14 +20,12 @@ public class Hit implements Listener {
     }
 
 
-    @EventHandler
+    @EventHandler (ignoreCancelled = true)
     public void hit(EntityDamageByEntityEvent e) {
-        if(e.isCancelled()) return;
 
         if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
-
-            Player player = (Player) e.getEntity();
-            Player target = (Player) e.getDamager();
+            Player player = (Player) e.getDamager();
+            Player target = (Player) e.getEntity();
             CombateManager manager = Main.getInstance().getManager();
 
             if (manager.contains(target.getName()) && manager.contains(player.getName())) {

@@ -4,30 +4,26 @@ import etiocook.combate.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
-public class CommandsBlock implements Listener {
+public class Teleport implements Listener {
     private final Main main;
 
-    public CommandsBlock(Main pl) {
+    public Teleport(Main pl) {
         this.main = pl;
         pl.getServer().getPluginManager().registerEvents(this, pl);
 
     }
 
     @EventHandler
-    public void block(PlayerCommandPreprocessEvent e) {
+    public void teleport(PlayerTeleportEvent e) {
         Player player = e.getPlayer();
 
         if (main.getManager().contains(player.getName())) {
-            if (player.isOp()) {
-
-                return;
-            }
             e.setCancelled(true);
 
-            player.sendMessage("§4§lCombate: §cvocê não pode usar comandos enquanto está em combate");
+            player.sendMessage("§4§lCombate: §cvocê nao pode ser teleportado enquanto estiver em combate");
         }
+
     }
 }

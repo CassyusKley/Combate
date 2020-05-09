@@ -1,5 +1,6 @@
 package etiocook.combate;
 
+import etiocook.combate.command.CombateCommand;
 import etiocook.combate.listener.*;
 import etiocook.combate.manager.CombateManager;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
@@ -25,7 +26,9 @@ public class Main extends JavaPlugin {
         new Shooter(this);
         new CommandsBlock(this);
         new Death(this);
+        new Teleport(this);
 
+        getCommand("combate").setExecutor(new CombateCommand());
 
     }
 
